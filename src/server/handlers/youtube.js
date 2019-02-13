@@ -26,7 +26,7 @@ function download (url, options = {
     // TODO Add proper support for options
     const video = youtubeDl(url,
       // Optional arguments passed to youtube-dl.
-      ['--format=18'],
+      ['-f "bestvideo[ext=mp4][height<=1080][fps<=60]+bestaudio[ext=m4a]" --sub-lang en --write-sub --convert-subs srt'],
       // Additional options can be given for calling `child_process.execFile()`.
       { cwd: __dirname, maxBuffer: Infinity })
 
